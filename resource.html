@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".card, .card2");
+        const largeImageContainer = document.getElementById("large-image-container");
+        const largeImage = document.getElementById("large-image");
+    
+        cards.forEach(card => {
+            card.addEventListener("mouseenter", function () {
+                const imgElement = card.querySelector("img");
+                if (imgElement) {
+                    largeImage.src = imgElement.src; // 更新大图
+                    largeImageContainer.style.display = "flex"; // 显示大图容器
+                }
+            });
+    
+            card.addEventListener("mouseleave", function () {
+                largeImageContainer.style.display = "none"; // 隐藏大图
+            });
+        });
+    });
+    </script>
+    
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源中心 - TimeMap</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <header>
+        <div class="logo">
+            <img src="img/a51669217ade93fa6f6dc25937917ce(2).png" alt="TimeMap Logo">
+            <span>TimeMap</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="link.html" >首页</a></li>
+                <li><a href="resource.html" class="active">资源中心</a></li>
+                <li><a href="application.html" >应用场景</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <span class="icon">🔍</span>
+            <span class="icon">❓</span>
+            <span class="icon">登录</span>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="resource-container"> 
+        <!-- 侧边筛选栏 -->
+        <aside class="sidebar">
+            <!-- 中心型 -->
+            <details>
+                <summary>中心型 ▾</summary>
+                <details>
+                    <summary>单一时间 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#" class="active">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>实际可达 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>价值可达 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+            </details>
+
+            <!-- 网络型 -->
+            <details>
+                <summary>网络型 ▾</summary>
+                <details>
+                    <summary>单一时间 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>实际可达 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>价值可达 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+            </details>
+
+            <!-- 修改日期 -->
+            <details>
+                <summary>修改时间 ▾</summary>
+                <details>
+                    <summary>请选择 ▾</summary>
+                    <ul>
+                        <li><a href="#">最近一周</a></li>
+                        <li><a href="#">最近一个月</a></li>
+                        <li><a href="#">自定义范围</a></li>
+                    </ul>
+                </details>
+            </details>
+        </aside>
+
+        <!-- 资源内容区 -->
+        <section class="resource-content">
+            <div class="search-bar">
+                <div class="hero">
+                    <div class="company-logo2">
+                        <span>TimeMap&nbsp&nbspEnterprise</span>
+                    </div>
+                </div> 
+                <input type="text" placeholder="请输入关键词">
+                <button>筛选</button>
+            </div>
+
+            <!-- 地图资源卡片 -->
+            <div class="resource-grid">
+                <div class="card" >
+                    <img src="img\铁路全国地图黑底\北京.png" alt="地图1" class="card-image">
+                    <h4>北京</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\上海.png" alt="地图2">
+                    <h4>上海</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\天津.png" alt="地图3">
+                    <h4>天津</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\重庆.png" alt="地图4">
+                    <h4>重庆</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\海口.png" alt="地图1">
+                    <h4>海口</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\深圳.png" alt="地图2">
+                    <h4>深圳</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\广州.png" alt="地图3">
+                    <h4>广州</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\厦门.png" alt="地图4">
+                    <h4>厦门</h4>
+                </div>
+                <div class="card" >
+                    <img src="img\铁路全国地图黑底\福州.png" alt="地图1" class="card-image">
+                    <h4>福州</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\杭州.png" alt="地图2">
+                    <h4>杭州</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\南京.png" alt="地图3">
+                    <h4>南京</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\长沙.png" alt="地图4">
+                    <h4>长沙</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\武汉.png" alt="地图1">
+                    <h4>武汉</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\昆明.png" alt="地图2">
+                    <h4>昆明</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\贵阳.png" alt="地图2">
+                    <h4>贵阳</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\南宁.png" alt="地图3">
+                    <h4>南宁</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\南昌.png" alt="地图4">
+                    <h4>南昌</h4>
+                </div>
+                <div class="card" >
+                    <img src="img\铁路全国地图黑底\成都.png" alt="地图1" class="card-image">
+                    <h4>成都</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\西安.png" alt="地图2">
+                    <h4>西安</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\合肥.png" alt="地图3">
+                    <h4>合肥</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\济南.png" alt="地图4">
+                    <h4>济南</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\太原.png" alt="地图1">
+                    <h4>太原</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\郑州.png" alt="地图2">
+                    <h4>郑州</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\石家庄.png" alt="地图3">
+                    <h4>石家庄</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\沈阳.png" alt="地图4">
+                    <h4>沈阳</h4>
+                </div>
+                <div class="card" >
+                    <img src="img\铁路全国地图黑底\长春.png" alt="地图1" class="card-image">
+                    <h4>长春</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\哈尔滨.png" alt="地图2">
+                    <h4>哈尔滨</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\呼和浩特.png" alt="地图3">
+                    <h4>呼和浩特</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\银川.png" alt="地图4">
+                    <h4>银川</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\兰州.png" alt="地图1">
+                    <h4>兰州</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\西宁.png" alt="地图2">
+                    <h4>西宁</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\乌鲁木齐.png" alt="地图3">
+                    <h4>乌鲁木齐</h4>
+                </div>
+                <div class="card">
+                    <img src="img\铁路全国地图黑底\拉萨.png" alt="地图4">
+                    <h4>拉萨</h4>
+                </div>
+            </div>
+            <!-- 大图容器 -->
+            <div id="large-image-container">
+                <img id="large-image" src="" alt="大图">
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 TimeMap - All Rights Reserved</p>
+    </footer>
+</body>
+</html>

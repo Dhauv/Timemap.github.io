@@ -1,0 +1,431 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+/* 让容器占满整个视口高度 */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto; /* 允许页面滚动 */
+}
+
+/* ========== 让所有页面四周倒圆角 ========== */
+body {
+    /* margin: 20px;  让页面四周留白 */
+    border-radius: 15px;  /* 圆角 */
+    overflow: hidden; /* 避免超出 */
+    background-color: #242020; /* 轻微灰色背景，避免全白生硬 */
+}
+
+/* 确保主内容也有圆角 */
+main, .container {
+    overflow: auto;
+    border-radius: 15px;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* 轻微阴影，让内容更有层次感 */
+}
+/* 头部导航栏 */
+header {
+    background-color: #37393b;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+/* Logo */
+.logo {
+    position: absolute;
+    top: 12px;
+    left: 30px;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.6); /* 半透明背景提升可读性 */
+    padding: 10px 20px;
+    border-radius: 8px;
+}
+
+/* 导航栏 */
+nav {
+    flex-grow: 1;
+}
+
+nav ul {
+    margin-left: 200px;
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-right: 20px;
+    position: relative;
+}
+
+/* 导航链接样式 */
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+}
+
+/* 悬停效果：变深蓝色+字体浅蓝 */
+nav ul li a:hover {
+    background-color: #0d47a1;
+    color: #64b5f6;  /* 高级冷色调 */
+    border-radius: 5px;
+    transform: translateY(-2px);
+}
+/* 选中的状态（JS 会动态添加 `active` 类） */
+nav ul li a.active {
+    background-color: #0d47a1;
+    color: #64b5f6;
+    border-radius: 5px;
+}
+
+/* 假设中间内容的容器有一个类名叫做 .middle-content */
+.middle-content {
+    background-color: #333; /* 深灰色 */
+    color: #fff; /* 文字颜色设置为白色，确保可读性 */
+    /* padding: 20px; 根据需要调整内边距 */
+}
+
+/* 右侧图标 */
+.header-icons {
+    display: flex;
+    align-items: center;
+}
+
+.header-icons .icon {
+    margin-left: 15px;
+    font-size: 18px;
+    cursor: pointer;
+    color: white;
+    padding: 8px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+/* 悬停时变深蓝+字体变浅蓝+微微上浮 */
+.header-icons .icon:hover {
+    background-color: #0d47a1;
+    color: #64b5f6;
+    transform: translateY(-2px);
+}
+
+/* 让图片紧贴导航栏 */
+.hero {
+    /* background-color: #8488904d; */
+    height: auto; /* 适应图片 */
+    display: flex;
+    align-items: flex-start; /* 使 logo 贴近左上角 */
+    justify-content: center;
+    position: relative; /* 让 logo 绝对定位 */
+    padding: 0;
+    margin: 0;
+    border-radius: 8px; /* 取消圆角，让图片贴合 */
+}
+
+/* 让图片铺满 */
+.hero img {
+    height: 70%;
+    width: 92%;
+    display: block;
+    border-radius: 15px; /* 确保图片不会有额外的圆角 */
+}
+
+/* 企业 logo + 名称 */
+.company-logo {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    display: flex;
+    align-items: center;
+    /* background: rgba(0, 0, 0, 0.6); 半透明背景提升可读性 */
+    padding: 40px 150px;
+    border-radius: 8px;
+}
+
+/* Logo 图片 */
+.company-logo img {
+    height: 60px;
+    margin-right: 10px;
+}
+
+/* 企业名称 */
+.company-logo span {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 60px;
+    color: white;
+}
+.company-logo2 span {
+    background-color: #2e2a2a4f;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    border-radius: 8px;
+}
+
+/* 页脚 */
+footer {
+    background-color: #37393b;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+
+/* ========== 资源中心页面 ========== */
+.resource-container {
+    display: flex;
+    margin: 20px;
+    margin-bottom: 1000px;
+    height: 83vh; 确保高度占满视口
+    overflow-y: auto; /* 允许垂直滚动 */
+}
+
+/* 侧边栏整体样式 */
+.sidebar {
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 一级目录（中心型 / 网络型） */
+.sidebar summary {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    background: #f5f5f5;
+    border-radius: 6px;
+}
+
+.sidebar summary:hover {
+    background: #ddd;
+}
+
+/* 二级目录（单一时间 / 实际可达 / 价值可达） */
+.sidebar details details summary {
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+    padding-left: 15px;  /* 增加缩进 */
+    background: #f9f9f9;
+    border-radius: 4px;
+}
+
+.sidebar details details summary:hover {
+    background: #eee;
+}
+
+/* 三级目录（航空 / 铁路 / 公路） */
+.sidebar details details ul {
+    list-style: none;
+    padding-left: 30px; /* 让选项进一步缩进 */
+}
+
+.sidebar details details ul li a {
+    font-size: 13px;
+    color: #666;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+.sidebar details details ul li a.active{
+    background-color: #0d48a15a;
+    width: 30px;
+    color: #162cd395;
+    border-radius: 5px;
+}
+.sidebar details details ul li a:hover {
+    background: #eaeaea;
+    border-radius: 4px;
+}
+
+
+.sidebar ul li a {
+    font-size: 14px;
+    color: #555;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    background: #eaeaea;
+    border-radius: 4px;
+}
+
+/* 资源内容区域 */
+.resource-content {
+    flex-grow: 1;
+    padding-left: 30px;
+    flex: 1;
+    overflow-y: auto; /* 允许内容滚动 */
+}
+
+/* 搜索栏 */
+.search-bar {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.search-bar input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #4db6e2;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.search-bar button:hover {
+    background-color: #3498db;
+}
+
+/* 资源卡片布局 */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 列布局 */
+    gap: 20px;
+}
+/* 资源卡片布局 */
+.resource-grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 4 列布局 */
+    gap: 50px;
+}
+/* 资源卡片样式 */
+.card {
+    background-color: rgba(54, 46, 46, 0.171);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.card h4 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* 悬停时微微上浮 */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* 资源卡片样式 */
+.card2 {
+    background-color: rgba(54, 46, 46, 0.171);
+    border-radius: 8px;
+    min-height: 400px; /* 增加最小高度 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: 0.3s;
+    cursor: pointer;
+    position: relative;
+}
+
+.card2 img {
+    width: 100%;
+    height: 350px;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    object-fit: cover;
+}
+
+.card2 h4 {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+/* 悬停时微微上浮 */
+.card2:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+/* 大图容器样式 */
+#large-image-container {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 80%; /* 右侧 80% 区域显示大图 */
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.509); /* 半透明背景 */
+    display: none; /* 默认不显示 */
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    pointer-events: none; /* 防止鼠标事件影响 */
+}
+
+/* 让大图不会干扰鼠标事件 */
+#large-image {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+}
+
+/* 当鼠标悬停在 .card 或 .card2 上，显示大图 */
+.card:hover ~ #large-image-container,
+.card2:hover ~ #large-image-container,
+#large-image-container:hover {
+    display: flex;
+}
+
+/* 响应式布局 */
+@media (max-width: 1024px) {
+    .resource-grid {
+        grid-template-columns: repeat(2, 1fr); /* 平板端 2 列布局 */
+    }
+}
+
+@media (max-width: 768px) {
+    .resource-container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .resource-grid {
+        grid-template-columns: repeat(1, 1fr); /* 手机端 1 列 */
+    }
+}
+
