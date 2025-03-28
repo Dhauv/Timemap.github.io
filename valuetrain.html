@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".card, .card2");
+        const largeImageContainer = document.getElementById("large-image-container");
+        const largeImage = document.getElementById("large-image");
+    
+        cards.forEach(card => {
+            card.addEventListener("mouseenter", function () {
+                const imgElement = card.querySelector("img");
+                if (imgElement) {
+                    largeImage.src = imgElement.src; // 更新大图
+                    largeImageContainer.style.display = "flex"; // 显示大图容器
+                }
+            });
+    
+            card.addEventListener("mouseleave", function () {
+                largeImageContainer.style.display = "none"; // 隐藏大图
+            });
+        });
+    });
+    </script>
+    
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源中心 - TimeMap</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <header>
+        <div class="logo">
+            <img src="img/a51669217ade93fa6f6dc25937917ce(2).png" alt="TimeMap Logo">
+            <span>TimeMap</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="link.html" >首页</a></li>
+                <li><a href="resource.html" class="active">资源中心</a></li>
+                <li><a href="application.html" >应用场景</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <span class="icon">🔍</span>
+            <span class="icon">❓</span>
+            <span class="icon">登录</span>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="resource-container"> 
+        <!-- 侧边筛选栏 -->
+        <aside class="sidebar">
+            <!-- 中心型 -->
+            <details>
+                <summary>中心型 ▾</summary>
+                <details>
+                    <summary>单一时间 ▾</summary>
+                    <ul>
+                        <li><a href="air.html">航空</a></li>
+                        <li><a href="train.html" >铁路</a></li>
+                        <li><a href="road.html">公路</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>实际可达 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="realitytrain.html">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>价值可达 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="valuetrain.html"class="active">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+            </details>
+
+            <!-- 网络型 -->
+            <details>
+                <summary>网络型 ▾</summary>
+                <details>
+                    <summary>单一时间 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>实际可达 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+                <details>
+                    <summary>价值可达 ▾</summary>
+                    <ul>
+                        <li><a href="#">航空</a></li>
+                        <li><a href="#">铁路</a></li>
+                        <li><a href="#">公路</a></li>
+                    </ul>
+                </details>
+            </details>
+
+            <!-- 修改日期 -->
+            <details>
+                <summary>修改时间 ▾</summary>
+                <details>
+                    <summary>请选择 ▾</summary>
+                    <ul>
+                        <li><a href="#">最近一周</a></li>
+                        <li><a href="#">最近一个月</a></li>
+                        <li><a href="#">自定义范围</a></li>
+                    </ul>
+                </details>
+            </details>
+        </aside>
+
+        <!-- 资源内容区 -->
+        <section class="resource-content">
+            <div class="search-bar">
+                <div class="hero">
+                    <div class="company-logo2">
+                        <span>TimeMap&nbsp&nbspEnterprise</span>
+                    </div>
+                </div> 
+                <input type="text" placeholder="请输入关键词">
+                <button>筛选</button>
+            </div>
+
+            <!-- 地图资源卡片 -->
+            <div class="resource-grid2">
+                <div class="card2">
+                    <img src="img\价值可达\价值可达上海.png" alt="地图1">
+                    <h4>北京</h4>
+                </div>
+                <div class="card2">
+                    <img src="img\价值可达\价值可达南京.png" alt="地图2">
+                    <h4>上海</h4>
+                </div>
+            </div>
+                
+            <!-- 大图容器 -->
+            <div id="large-image-container">
+                <img id="large-image" src="" alt="大图">
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 TimeMap - All Rights Reserved</p>
+    </footer>
+</body>
+</html>
