@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const cards = document.querySelectorAll(".card, .card2, .card3");
+        const largeImageContainer = document.getElementById("large-image-container");
+        const largeImage = document.getElementById("large-image");
+    
+        cards.forEach(card => {
+            card.addEventListener("mouseenter", function () {
+                const imgElement = card.querySelector("img");
+                if (imgElement) {
+                    largeImage.src = imgElement.src; // 更新大图
+                    largeImageContainer.style.display = "flex"; // 显示大图容器
+                }
+            });
+    
+            card.addEventListener("mouseleave", function () {
+                largeImageContainer.style.display = "none"; // 隐藏大图
+            });
+        });
+    });
+    document.addEventListener("DOMContentLoaded", function () {
+    // 读取 localStorage 以恢复展开状态
+    document.querySelectorAll("details").forEach(detail => {
+        const id = detail.id;
+        if (id && localStorage.getItem(id) === "open") {
+            detail.setAttribute("open", "true");
+        }
+    });
+
+    // 监听 <details> 的展开和折叠，并存储状态
+    document.querySelectorAll("details").forEach(detail => {
+        detail.addEventListener("toggle", function () {
+            const id = detail.id;
+            if (id) {
+                if (detail.open) {
+                    localStorage.setItem(id, "open");
+                } else {
+                    localStorage.removeItem(id);
+                }
+            }
+        });
+    });
+});
+
+</script>
+    
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>资源中心 - TimeMap</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- 头部导航栏 -->
+    <header>
+        <div class="logo">
+            <img src="img/a51669217ade93fa6f6dc25937917ce(2).png" alt="TimeMap Logo">
+            <span>TimeMap</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="link.html" >首页</a></li>
+                <li><a href="resource.html" >资源中心</a></li>
+                <li><a href="application.html" >应用场景</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <span class="icon">🔍</span>
+            <span class="icon">❓</span>
+            <span class="icon">登录</span>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="resource-container"> 
+        
+
+        <!-- 资源内容区 -->
+        <section class="resource-content">
+            <div class="search-bar">
+                <div class="hero">
+                    <div class="company-logo2">
+                        <span>TimeMap&nbsp&nbspEnterprise</span>
+                    </div>
+                    
+                </div> 
+            </div>
+         
+            <div class="resource-grid4">
+                <div class="card3" >
+                    <img src="img\图片-铁路中心-终版\乌鲁木齐.png"  alt="地图1" >
+                    <h4>乌鲁木齐铁路时间地图（全国）</h4>
+                </div>
+            </div>
+            
+            <div id="large-image-container">
+                <img id="large-image" src="" alt="大图">
+            </div>
+
+        </section>
+    </main>
+    <footer>
+        <p>© 2024 TimeMap - All Rights Reserved</p>
+    </footer>
+</body>
+</html>

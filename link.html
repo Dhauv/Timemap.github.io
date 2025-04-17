@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TimeMap</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="home">
+    <header>
+        <div class="logo">
+            <img src="img\a51669217ade93fa6f6dc25937917ce(2).png" alt="TimeMap Logo">
+            <span>TimeMap</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="link.html" class="active">首页</a></li>
+                <li><a href="resource.html" >资源中心</a></li>
+                <li><a href="application.html">应用场景</a></li>
+            </ul>
+        </nav>
+        <div class="header-icons">
+            <span class="icon">🔍</span>
+            <span class="icon">❓</span>
+            <span class="icon">登录</span>
+        </div>
+    </header>
+    <div class="hero">
+        <div class="company-logo">
+            <img src="img\a51669217ade93fa6f6dc25937917ce(2).png" alt="企业 Logo">
+            <span>TimeMap&nbsp&nbspEnterprise</span>
+        </div>
+        <img src="img\ec0037089e9fe7a15e1cddc6e58f7e2e.jpg" alt="首页背景图">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="您从哪座城市出发...（请输入）">
+            <button onclick="search()">运行</button>
+        </div>
+    </div>    
+    <footer>
+        <p>© 2024 TimeMap - All Rights Reserved</p>
+    </footer>
+</body>
+</html>
+<script>
+     function search() {
+            let keyword = document.getElementById("searchInput").value.trim();
+            let searchMap = {
+                "资源中心": "resource.html",
+                "应用场景": "application.html",
+                "北京": "beijing.html",
+                "上海": "shanghai.html",
+                "天津": "tianjin.html",
+                "重庆": "chongqing.html",
+                "海口": "haikou.html",
+                "深圳": "shenzhen.html",
+                "广州": "guangzhou.html",
+                "厦门": "xiamen.html",
+                "福州": "fuzhou.html",
+                "杭州": "hangzhou.html",
+                "南京": "nanjing.html",
+                "长沙": "changsha.html",
+                "武汉": "wuhan.html",
+                "昆明": "kunming.html",
+                "贵阳": "guiyang.html",
+                "南宁": "nanning.html",
+                "南昌": "nanchang.html",
+                "成都": "chengdu.html",
+                "西安": "xian.html",
+                "合肥": "hefei.html",
+                "济南": "jinan.html",
+                "太原": "taiyuan.html",
+                "郑州": "zhengzhou.html",
+                "石家庄": "shijiazhuang.html",
+                "沈阳": "shenyang.html",
+                "长春": "changchun.html",
+                "哈尔滨": "haerbin.html",
+                "呼和浩特": "huhehaote.html",
+                "银川": "yinchuan.html",
+                "兰州": "lanzhou.html",
+                "西宁": "xining.html",
+                "乌鲁木齐": "wulumuqi.html",
+                "苏州": "suzhou.html",
+                "宁波": "ningbo.html",
+                "青岛": "qingdao.html",
+                "大连": "dalian.html",
+                "拉萨": "lasa.html",
+                "铁路": "train.html",
+                "公路": "road.html"
+            };
+
+            if (keyword in searchMap) {
+                window.location.href = searchMap[keyword];
+            } else {
+                alert("未找到相关城市，请重新输入城市名");
+            }
+        }
+        document.getElementById("searchInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {  // 检测是否按下回车键
+        search();  // 调用搜索函数
+    }
+});
+</script>
